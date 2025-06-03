@@ -1,0 +1,23 @@
+{
+  "name": "codex-site",
+  "version": "1.0.0",
+  "description": "Un site web simple créé avec HTML, CSS et JavaScript",
+  "main": "index.html",
+  "scripts": {
+    "deploy": "netlify deploy --dir=. --prod",
+    "deploy:draft": "netlify deploy --dir=.",
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "website"
+  ],
+  "author": "Codex AI",
+  "license": "MIT",
+  "devDependencies": {
+    "netlify-cli": "^15.0.0",
+    "serve": "^14.0.0"
+  }
+}
