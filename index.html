@@ -3,30 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Site Codex</title>
+    <title>Coaching Freelance - Passe à l'action</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="font-sans text-gray-800">
     <header>
-        <h1>Bienvenue sur Codex TEST</h1>
+        <nav class="text-center py-6 bg-gray-800 text-white">
+            <h1 class="text-3xl font-bold">Coaching Freelance</h1>
+        </nav>
     </header>
-    
     <main>
-        <section class="hero">
-            <h2>Un site web simple et élégant</h2>
-            <p>Créé avec HTML, CSS et JavaScript</p>
+        <section id="hero" class="min-h-screen flex items-center justify-center text-center bg-gradient-to-r from-purple-500 to-blue-600 text-white px-4">
+            <div>
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Passe à l'action maintenant : deviens freelance rentable &amp; libre</h2>
+                <p class="text-xl md:text-2xl mb-8">Coaching et formations exclusives pour les abonnés de ma chaîne YouTube.</p>
+                <a href="#cta" class="bg-white text-purple-600 font-semibold py-3 px-8 rounded hover:bg-gray-100 transition">Réserve ton appel gratuit</a>
+            </div>
         </section>
-        
-        <section class="content">
-            <p>Cette page a été créée pour démontrer le déploiement d'un site web sur une plateforme gratuite.</p>
-            <p>Date de création : 3 juin 2025</p>
+
+        <section id="social-proof" class="py-12 bg-gray-100 fade-in">
+            <div class="max-w-5xl mx-auto px-4">
+                <h2 class="text-2xl font-bold mb-6 text-center">Ils m'ont fait confiance</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-4 bg-white rounded shadow">Témoignage 1 (placeholder)</div>
+                    <div class="p-4 bg-white rounded shadow">Témoignage 2 (placeholder)</div>
+                    <div class="p-4 bg-white rounded shadow">Témoignage 3 (placeholder)</div>
+                </div>
+                <div class="flex justify-center mt-8 space-x-6">
+                    <div class="flex items-center">
+                        <img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="YouTube" class="w-8 h-8 mr-2">
+                        <span>120k abonnés</span>
+                    </div>
+                    <div class="flex items-center">
+                        <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram" class="w-8 h-8 mr-2">
+                        <span>50k abonnés</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="offers" class="py-12 fade-in">
+            <div class="max-w-5xl mx-auto px-4">
+                <h2 class="text-2xl font-bold mb-6 text-center">Choisis l'offre qui te correspond</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="p-6 bg-white rounded shadow">
+                        <h3 class="text-xl font-semibold mb-2">Coaching personnalisé</h3>
+                        <ul class="list-disc pl-5 mb-4">
+                            <li>Appel visio 1:1</li>
+                            <li>Suivi individuel</li>
+                        </ul>
+                        <button class="bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700 transition">Réserve ton appel</button>
+                    </div>
+                    <div class="p-6 bg-white rounded shadow">
+                        <h3 class="text-xl font-semibold mb-2">Formation en ligne</h3>
+                        <ul class="list-disc pl-5 mb-4">
+                            <li>Vidéos à ton rythme</li>
+                            <li>Exercices et bonus</li>
+                        </ul>
+                        <button class="bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700 transition">Accède à la formation</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-12 bg-gray-100 fade-in">
+            <div class="max-w-5xl mx-auto px-4 md:flex items-center">
+                <img src="https://via.placeholder.com/200x200" alt="Coach" class="rounded-full mx-auto md:mx-0 md:mr-8 mb-6 md:mb-0">
+                <div>
+                    <h2 class="text-2xl font-bold mb-4">À propos de moi</h2>
+                    <p>Je suis [Ton Nom], coach et créateur de contenu sur YouTube. Ma mission est d'aider les freelances à développer un business rentable et à gagner en liberté.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="py-12 fade-in">
+            <div class="max-w-5xl mx-auto px-4 text-center">
+                <h2 class="text-2xl font-bold mb-4">Prêt à passer à l'action ?</h2>
+                <a href="#" class="bg-purple-600 text-white py-3 px-6 rounded hover:bg-purple-700 transition">Je veux me former / réserver un coaching</a>
+            </div>
+        </section>
+
+        <section id="faq" class="py-12 bg-gray-100 fade-in">
+            <div class="max-w-5xl mx-auto px-4">
+                <h2 class="text-2xl font-bold mb-6 text-center">FAQ</h2>
+                <div class="space-y-4">
+                    <div class="faq-item">
+                        <button class="w-full text-left font-semibold py-2 px-4 bg-white rounded shadow flex justify-between items-center">Comment se déroule le coaching ?<span class="arrow">+</span></button>
+                        <div class="hidden p-4 bg-white">Nous échangeons en visio pour définir tes objectifs et mettre en place un plan d'action personnalisé.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="w-full text-left font-semibold py-2 px-4 bg-white rounded shadow flex justify-between items-center">La formation est-elle accessible à vie ?<span class="arrow">+</span></button>
+                        <div class="hidden p-4 bg-white">Oui, tu peux revoir les vidéos autant de fois que tu le souhaites.</div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
-    
-    <footer>
+    <footer class="text-center py-6 bg-gray-800 text-white">
         <p>&copy; 2025 - Tous droits réservés</p>
     </footer>
-    
     <script src="script.js"></script>
 </body>
 </html>
