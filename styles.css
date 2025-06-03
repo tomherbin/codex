@@ -1,6 +1,6 @@
 /* Styles additionnels pour animations */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 .fade-in {
     opacity: 0;
