@@ -19,6 +19,14 @@ Ce site est déployé sur Netlify avec l'URL: https://codex-site-web.windsurf.bu
 
 #### 1. Utiliser le script Python (recommandé)
 
+**Étape 1:** Authentification (seulement la première fois)
+```bash
+# Configuration du token d'authentification Netlify
+python3 codex_deploy.py --setup-token
+```
+Suivez les instructions affichées à l'écran pour générer et configurer votre token Netlify.
+
+**Étape 2:** Déploiement
 ```bash
 # Déploiement en production
 python3 codex_deploy.py
