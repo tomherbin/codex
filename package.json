@@ -19,5 +19,8 @@
   "devDependencies": {
     "netlify-cli": "^15.0.0",
     "serve": "^14.0.0"
+  },
+  "dependencies": {
+    "surge": "^0.24.6"
   }
 }

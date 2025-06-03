@@ -14,28 +14,33 @@ Options:
 import os
 import sys
 import subprocess
-import yaml
 import re
 import getpass
+
+# Tentative d'importation de PyYAML, mais on peut fonctionner sans
+try:
+    import yaml
+    HAS_YAML = True
+except ImportError:
+    HAS_YAML = False
 
 def get_site_id():
     """Récupérer l'ID du site depuis le fichier de configuration."""
     try:
-        with open("windsurf_deployment.yaml", "r") as file:
-            config = yaml.safe_load(file)
-            return config.get("project_id", "")
-    except Exception as e:
-        print(f"Erreur lors de la lecture du fichier de configuration: {e}")
-        # Fallback vers la méthode regex pour les cas où PyYAML n'est pas disponible
-        try:
+        if HAS_YAML:
+            with open("windsurf_deployment.yaml", "r") as file:
+                config = yaml.safe_load(file)
+                return config.get("project_id", "")
+        else:
+            # Méthode regex pour les cas où PyYAML n'est pas disponible
             with open("windsurf_deployment.yaml", "r") as file:
                 content = file.read()
                 match = re.search(r'project_id:\s*([^\s]+)', content)
                 if match:
                     return match.group(1)
-        except Exception:
-            pass
-        return ""
+    except Exception as e:
+        print(f"Erreur lors de la lecture du fichier de configuration: {e}")
+    return ""
 
 def check_netlify_cli():
     """Vérifie si Netlify CLI est installé et l'installe si nécessaire."""
