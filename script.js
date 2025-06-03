@@ -1,20 +1,34 @@
-// Wait for DOM to be loaded
+// Animations et interactions de la page
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Display current year in footer
+    // Mettre à jour l'année du footer
     const footerYear = document.querySelector('footer p');
     const currentYear = new Date().getFullYear();
     footerYear.innerHTML = footerYear.innerHTML.replace('2025', currentYear);
-    
-    // Add a simple animation effect to the hero section
-    const hero = document.querySelector('.hero');
-    setTimeout(() => {
-        hero.style.transition = 'all 0.5s ease';
-        hero.style.transform = 'translateY(0)';
-        hero.style.opacity = '1';
-    }, 100);
-    hero.style.transform = 'translateY(20px)';
-    hero.style.opacity = '0';
-    
-    // Log a message to console
-    console.log('Le site Codex est chargé et prêt !');
+
+    // Intersection Observer pour les effets d'apparition
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+    });
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-item button').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const content = btn.nextElementSibling;
+            const isOpen = !content.classList.contains('hidden');
+            content.classList.toggle('hidden');
+            btn.classList.toggle('open');
+            btn.querySelector('.arrow').textContent = isOpen ? '+' : '-';
+        });
+    });
+
+    console.log('Page de coaching chargée');
 });
